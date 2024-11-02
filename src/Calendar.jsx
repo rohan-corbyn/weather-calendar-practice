@@ -18,6 +18,7 @@ export default function Calendar() {
         const data = await response.json();
         setWeatherData(data);
       } else if (mode === "dev") {
+        console.log(dummyDataDays);
         setWeatherData(dummyDataDays);
       }
     } catch (error) {
@@ -34,10 +35,14 @@ export default function Calendar() {
   return (
     <div id="calendar">
       {weatherData.days.map((day, i) => (
-        <Day key={i} dayNum={i} data={weatherData.days[i]}></Day>
+        <Day
+          key={i}
+          weatherData={weatherData.days[i]}
+          datetime={weatherData.days[i].datetime}
+        ></Day>
       ))}
       {Array.from({ length: currentMonth.numDays - numDataDays }, (_, i) => (
-        <Day dayNum={i + numDataDays} key={i + numDataDays} />
+        <Day dayNum={i + numDataDays} key={i + numDataDays} datetime={null} />
       ))}
     </div>
   );

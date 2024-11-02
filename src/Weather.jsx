@@ -1,6 +1,4 @@
-function Weather(props) {
-  console.log(props.image);
-
+export default function Weather(props) {
   return (
     <div className="weather">
       <i
@@ -13,5 +11,3 @@ function Weather(props) {
     </div>
   );
 }
-
-export default Weather;

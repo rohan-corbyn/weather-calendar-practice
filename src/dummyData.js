@@ -1,44 +1,6 @@
 const dummyDataDays = {
     days: [
         {
-            datetime: "2024-10-31",
-            datetimeEpoch: 1730332800,
-            tempmax: 58.2,
-            tempmin: 49.2,
-            temp: 53.1,
-            feelslikemax: 58.2,
-            feelslikemin: 49.2,
-            feelslike: 53.1,
-            dew: 48.2,
-            humidity: 83.6,
-            precip: 0,
-            precipprob: 0,
-            precipcover: 0,
-            preciptype: null,
-            snow: 0,
-            snowdepth: 0,
-            windgust: 4.9,
-            windspeed: 3.6,
-            winddir: 294.4,
-            pressure: 1027.1,
-            cloudcover: 68.6,
-            visibility: 8.5,
-            solarradiation: 30,
-            solarenergy: 2.6,
-            uvindex: 1,
-            severerisk: 10,
-            sunrise: "06:53:01",
-            sunriseEpoch: 1730357581,
-            sunset: "16:34:29",
-            sunsetEpoch: 1730392469,
-            moonphase: 0.97,
-            conditions: "Partially cloudy",
-            description: "Partly cloudy throughout the day.",
-            icon: "partly-cloudy-day",
-            stations: ["EGWU", "EGLL", "D5621", "EGLC"],
-            source: "comb",
-        },
-        {
             datetime: "2024-11-01",
             datetimeEpoch: 1730419200,
             tempmax: 59.3,
@@ -588,4 +550,31 @@ const months = [
     { name: "December", numDays: 31 },
 ];
 
-export { dummyDataDays, months };
+const todos = [
+    {
+        "id": crypto.randomUUID(),
+        "title": "Daily Standup",
+        "type": "daily",
+        "timeUnit": 1,
+        "time": "09:00",
+        "date": "2024-11-01"
+    },
+    {
+        "id": crypto.randomUUID(),
+        "title": "Weekly Report",
+        "type": "weekly",
+        "timeUnit": 2,
+        "time": "10:00",
+        "dayOfWeek": 1
+    },
+    {
+        "id": crypto.randomUUID(),
+        "title": "Monthly Review",
+        "type": "monthly",
+        "timeUnit": 1,
+        "time": "15:00",
+        "dayOfMonth": 1
+    }
+]
+
+export { dummyDataDays, months, todos };

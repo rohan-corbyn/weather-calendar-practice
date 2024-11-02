@@ -1,15 +1,11 @@
 import TodoSummary from "./TodoSummary.jsx";
 import DaySummary from "./DaySummary.jsx";
 
-function Day(props) {
-  if (props.data) {
-  }
+export default function Day({ datetime, weatherData }) {
   return (
     <div className="day">
-      <DaySummary dayNum={props.dayNum} data={props.data} />
-      <TodoSummary />
+      <DaySummary datetime={datetime} weatherData={weatherData} />
+      <TodoSummary datetime={datetime} />
     </div>
   );
 }
-
-export default Day;

@@ -1,18 +1,16 @@
 import Weather from "./Weather";
 
-function DaySummary(props) {
+export default function DaySummary({ datetime, weatherData }) {
   return (
     <div className="daySummary">
-      {props.data && (
+      {weatherData && (
         <Weather
-          conditions={props.data.conditions}
-          image={props.data.icon}
+          conditions={weatherData.conditions}
+          image={weatherData.icon}
           className="weather"
         />
       )}
-      <div className="dayNum">{props.dayNum}</div>
+      <div className="dayNum">{datetime}</div>
     </div>
   );
 }
-
-export default DaySummary;

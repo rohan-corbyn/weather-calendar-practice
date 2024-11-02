@@ -1,29 +1,19 @@
 import { useState } from "react";
+import TodoListModal from "./TodoListModal";
 
-export default function TodoSummary() {
+export default function TodoSummary({datetime}) {
   const [isTodoSummaryOpen, setTodoSummaryOpen] = useState(false);
 
   return (
     <div>
       <div onClick={() => setTodoSummaryOpen(true)} id="todoSummaryBtn">
-        Todo Summary
+        Open Todos
       </div>
       {isTodoSummaryOpen && (
-        <div
-          id="todoModal"
-          className="modal"
-          onClick={(event) => {
-            const modal = document.getElementById("todoModal");
-            event.target === modal && setTodoSummaryOpen(false);
-          }}
-        >
-          <div className="modal-content">
-            <span onClick={() => setTodoSummaryOpen(false)} className="close">
-              &times;
-            </span>
-            <p>Todo Summary</p>
-          </div>
-        </div>
+        <TodoListModal datetime = {datetime}
+          isTodoSummaryOpen={isTodoSummaryOpen}
+          setTodoSummaryOpen={setTodoSummaryOpen}
+        />
       )}
     </div>
   );
